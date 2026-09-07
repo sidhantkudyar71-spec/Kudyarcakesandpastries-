@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kudyar Cakes & Pastries</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><img src="logo.jpg" alt="Kudyar Cakes & Pastries"><div><b>Kudyar Cakes & Pastries</b><small>Freshly baked with love</small></div></div>
+  <nav><a href="#home">Home</a><a href="#menu">Menu</a><a href="#order">Order</a><a href="#admin">Admin</a></nav>
+</header>
+
+<section id="home" class="hero">
+  <img src="logo.jpg" alt="Logo">
+  <div><p class="eyebrow">WELCOME TO</p><h1>Kudyar Cakes & Pastries</h1>
+  <p>Beautiful cakes and delicious pastries for birthdays, celebrations and every special moment.</p>
+  <a class="btn" href="#menu">View Menu</a></div>
+</section>
+
+<section id="menu" class="section"><h2>Our Menu</h2><p class="muted">Tap “Order” to add an item to your order.</p>
+<div class="cards" id="products"></div></section>
+
+<section id="order" class="section orderbox">
+<h2>Place Your Order</h2>
+<form id="orderForm">
+  <input id="name" required placeholder="Customer name">
+  <input id="phone" required placeholder="Phone number" inputmode="tel">
+  <input id="address" required placeholder="Delivery address">
+  <select id="item" required><option value="">Select cake / pastry</option></select>
+  <input id="qty" type="number" min="1" value="1" required placeholder="Quantity">
+  <input id="date" type="date" required>
+  <textarea id="note" placeholder="Special instructions (optional)"></textarea>
+  <button class="btn" type="submit">Place Order</button>
+</form>
+<div id="success" class="success" hidden></div>
+</section>
+
+<section id="admin" class="section admin">
+<h2>Admin Portal</h2>
+<div id="loginBox">
+  <p class="muted">Demo admin login. Change the password in <code>app.js</code> before publishing.</p>
+  <input id="adminPass" type="password" placeholder="Admin password">
+  <button class="btn" onclick="adminLogin()">Login</button>
+</div>
+<div id="dashboard" hidden>
+  <div class="stats"><div><b id="total">0</b><span>Total Orders</span></div><div><b id="pending">0</b><span>Pending</span></div><div><b id="sales">₹0</b><span>Order Value</span></div></div>
+  <div class="admin-actions"><button onclick="exportOrders()">Export CSV</button><button onclick="clearOrders()">Clear Orders</button><button onclick="adminLogout()">Logout</button></div>
+  <div class="tablewrap"><table><thead><tr><th>Order</th><th>Customer</th><th>Item</th><th>Qty</th><th>Date</th><th>Total</th><th>Status</th></tr></thead><tbody id="orders"></tbody></table></div>
+</div>
+</section>
+
+<footer><img src="logo.jpg" alt=""><p>© 2026 Kudyar Cakes & Pastries</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
